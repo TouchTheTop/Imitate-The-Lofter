@@ -55,3 +55,29 @@ function onmouse(event) {
 //          $(".content-model").mouseout(function(){
 // mouseout(event);
 //          });
+
+
+
+
+      $(window).scroll(function(event){
+    var t = document.documentElement.scrollTop || document.body.scrollTop; 
+    if(t>=20)
+
+    { 
+$(".topBar").removeClass("topBar").addClass('topBarDown');
+$(".nav").removeClass("nav").addClass('navDown');
+        $(".nav-header h1").hide();
+        // $("#nav").animate({height:'50px'},'fast');
+        // $(".topBar").animate({height:'25px',marginTop:'10px'},'fast');
+
+    }
+    if(t<20){
+        console.log(t);
+        $(".topBarDown").removeClass("topBarDown").addClass('topBar');
+        $(".navDown").removeClass("navDown").addClass('nav');
+        // $("#nav").animate({height:'100px'},'fast');
+        // $(".topBar").animate({height:'50px',marginTop:'50px'},'fast');
+        $(".nav-header h1").show();
+    }
+
+    });
